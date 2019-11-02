@@ -1,0 +1,32 @@
+{
+	"env": {
+		"browser": true,
+		"jest": true
+	},
+	"plugins": [
+		"prettier",
+		"react-redux"
+	],
+	"parser": "babel-eslint",
+	"extends": [
+		"prettier",
+		"airbnb",
+		"plugin:react-redux/recommended"
+	],
+	"rules": {
+		"react/no-danger": 0,
+		"no-tabs": 0,
+		"react/no-array-index-key": 0,
+		"jsx-a11y/label-has-for": [
+			"error",
+			{
+				"required": {
+					"some": [
+						"nesting",
+						"id"
+					]
+				}
+			}
+		]
+	}
+}
