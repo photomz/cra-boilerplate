@@ -1,0 +1,16 @@
+{
+	"editor.defaultFormatter": "dbaeumer.vscode-eslint",
+	"javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "[javascript]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
+    "[javascriptreact]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+		},
+		"eslint.autoFixOnSave": true,
+		"eslint.lintTask.enable": true,
+		"eslint.packageManager": "yarn",
+}
