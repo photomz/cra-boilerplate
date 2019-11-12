@@ -5,26 +5,25 @@ import Transition from './Transition';
 import NormalLayout from '../layouts/normalLayout';
 import BlogLayout from '../layouts/blogLayout';
 
-import routeList from './routeList';
 import routeAndPageList from './routeAndPageList';
 
 const Routes = () => (
   <Router>
     <Transition>
       {routeAndPageList.map(({
-        path, component, key, layout,
+        route, component, key, layout, ...props
       }) => (
         <Route
-          path={path}
+          path={route}
           render={() => {
             switch (layout) {
-              case 'blog':
-                return <BlogLayout>{component}</BlogLayout>;
-              default:
-                return <NormalLayout>{component}</NormalLayout>;
+              case 'blog': return <BlogLayout>{component}</BlogLayout>;
+              default: return <NormalLayout>{component}</NormalLayout>;
             }
           }}
           key={key}
+          // eslint-disable-next-line react/jsx-props-no-spreading
+          {...props}
         />
       ))}
     </Transition>
@@ -32,4 +31,3 @@ const Routes = () => (
 );
 
 export default Routes;
-export { routeList };

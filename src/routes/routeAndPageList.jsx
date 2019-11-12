@@ -14,11 +14,29 @@ import GreenEggsAndHam from '../pages/blog/green-eggs-and-ham';
 const { landing, page2, settings, blog } = routeList;
 
 const routeAndComponentList = Util.addKeys([
-  { route: landing, component: <Landing /> },
-  { route: page2, component: <Page2 /> },
-  { route: settings, component: <Settings /> },
-  { route: blog.samIAm, component: <SamIAm />, layout: 'blog' },
-  { route: blog.GreenEggsAndHam, component: <GreenEggsAndHam />, layout: 'blog' },
+  {
+    route: landing,
+    component: <Landing />,
+    exact: true,
+  },
+  {
+    route: page2,
+    component: <Page2 />,
+  },
+  {
+    route: settings,
+    component: <Settings />,
+  },
+  {
+    route: blog.samIAm,
+    component: <SamIAm />,
+    layout: 'blog',
+  },
+  {
+    route: blog.GreenEggsAndHam,
+    component: <GreenEggsAndHam />,
+    layout: 'blog',
+  },
 ]);
 
 export default routeAndComponentList;

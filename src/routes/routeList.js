@@ -1,5 +1,5 @@
 export default {
-  landing: '/landing',
+  landing: '/',
   page2: '/page2',
   settings: '/settings',
   blog: {

@@ -1,8 +1,12 @@
+/* eslint-disable no-trailing-spaces */
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
+import routeList from '../../routes/routeList';
 import $ from '../../styles/global';
+import Util from '../../utils';
 
 const Container = styled.div`
 	position: fixed;
@@ -20,6 +24,7 @@ const NavigationHeader = styled.div`
 	margin-left: ${$.layout().margin4}px;
 	font-weight: ${$.font.weight.black}px;
 	color: ${$.color.blue2};
+	display: block;
 `;
 
 const ContentContainer = styled.div`
@@ -38,9 +43,22 @@ const Footer = styled.div`
 	color: ${$.color.blue1};
 `;
 
+const blogEntriesWithKeys = Util.addArrayKeys(Object.entries(routeList.blog));
+
 const BlogLayout = ({ children }) => (
   <Container>
-    <NavigationHeader>Hello from blog layout</NavigationHeader>
+    <NavigationHeader>
+			Hello from blog layout
+      {blogEntriesWithKeys.map(([name, route, key]) => (
+        <>
+          <br />
+          <Link to={route} key={key}>
+            {`Link to ${name} blog entry`}
+          </Link>
+        </>
+      ))}
+      <Link to={routeList.landing}>Go back home</Link>
+    </NavigationHeader>
     <ContentContainer>{children}</ContentContainer>
     <Footer>Hello from footer</Footer>
   </Container>

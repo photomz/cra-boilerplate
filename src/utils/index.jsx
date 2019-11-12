@@ -104,6 +104,13 @@ const useOutsideClick = (refArray, callback) => {
  */
 const addKeys = (items) => items.map((item) => ({ ...item, key: shortid.generate() }));
 
+/**
+ * Takes in 1 array of arrays, and add keys to them.
+ * @param {array} items - 1 array of arrays.
+ * @returns {array}
+ */
+const addArrayKeys = (items) => items.map((item) => ([...item, shortid.generate()]));
+
 const parseTimeToDayMonth = (item) => {
   const date = new Date(item);
   const day = date.getDate();
@@ -144,6 +151,7 @@ export default {
   importOneSVG,
   useOutsideClick,
   addKeys,
+  addArrayKeys,
   parseTimeToDayMonth,
   parseTimeToDayName,
   useActions,
