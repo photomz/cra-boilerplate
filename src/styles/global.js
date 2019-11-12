@@ -35,6 +35,26 @@ export default {
     blue2: '#003672',
     gray: '#c3c3c3',
   },
+  font: {
+    family: {
+      body: 'Lato',
+    },
+    weight: {
+      regular: 400,
+      bold: 700,
+      black: 900,
+      light: 300,
+    },
+    size: {
+      title: 40,
+      subtitle: 32,
+      headerBold: 24,
+      header: 22,
+      body: 18,
+      button: 22,
+      input: 14,
+    },
+  },
   ellipsis: `
   white-space: nowrap; 
   overflow: hidden;

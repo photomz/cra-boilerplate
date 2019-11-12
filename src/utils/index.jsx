@@ -54,6 +54,7 @@ const useOutsideClick = (refArray, callback) => {
     let outsideClick = false;
 
     if (!(Array.isArray(refArray) && refArray.length > 0)) {
+      // eslint-disable-next-line no-console
       console.log('Please pass in an array of refs.');
     }
 
